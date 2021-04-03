@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="33" android:versionName="3.3" package="com.nsolucoes.gentlemansbarbershop" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<permission android:name="com.nsolucoes.gentlemansbarbershop.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<application android:label="Gentlemans BarberShop" android:icon="@drawable/icon" android:usesCleartextTraffic="true" android:theme="@android:style/Theme.DeviceDefault.Light">
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+		</provider>
+		<activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" android:theme="@style/Base.Theme.AppCompat" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBqXQ_XEakmGwuumN8INzpQAxPWrVdaULw" />
+		<receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="com.nsolucoes.gentlemansbarbershop" />
+			</intent-filter>
+		</receiver>
+	</application>
+</manifest>

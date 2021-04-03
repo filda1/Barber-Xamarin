@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GentlemansV2.Entrar"
+             BackgroundColor="{StaticResource AppDark}"
+             Title="Entrar">
+    
+    <StackLayout>
+        <Image Margin="0,50,0,0" HorizontalOptions="CenterAndExpand" Source="logoBorderWhite.png" WidthRequest="200"></Image>
+        <StackLayout Margin="40,20,40,0">
+            <Entry HeightRequest="40" HorizontalOptions="FillAndExpand" Placeholder="Email" Keyboard="Email" x:Name="emailEntry">
+                 <Entry.TextColor>
+                    <OnPlatform x:TypeArguments="Color"
+                      Android="#fff"/>
+                </Entry.TextColor>
+                <Entry.PlaceholderColor>
+                    <OnPlatform x:TypeArguments="Color"
+                      Android="Gray"/>
+                </Entry.PlaceholderColor>
+            </Entry>
+            <Entry HeightRequest="40" HorizontalOptions="FillAndExpand" Placeholder="Password" IsPassword="True" x:Name="passwordEntry">
+                <Entry.TextColor>
+                    <OnPlatform x:TypeArguments="Color"
+                      Android="#fff"/>
+                </Entry.TextColor>
+                <Entry.PlaceholderColor>
+                    <OnPlatform x:TypeArguments="Color"
+                      Android="Gray"/>
+                </Entry.PlaceholderColor>
+            </Entry>
+        </StackLayout>
+            <Button Margin="100,50" BackgroundColor="Transparent" BorderColor="White" BorderWidth="4" FontSize="Medium" TextColor="White" HeightRequest="55" 
+                    HorizontalOptions="FillAndExpand" Text="Entrar" Clicked="Button_Clicked">
+               
+            </Button>
+        
+    </StackLayout>
+
+</ContentPage>

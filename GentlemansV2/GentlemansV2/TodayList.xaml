@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="GentlemansV2.TodayList"
+            BackgroundColor="{StaticResource AppDark}"
+            xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+            BarBackgroundColor="Black"
+            BarTextColor="White"
+            Title="Marcações">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Conta" Clicked="Definitions_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage Title="Hoje">
+        
+      <ListView x:Name="todayView" BackgroundColor="{StaticResource AppDark}" SeparatorVisibility="None" HasUnevenRows="true">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" ClassId="{Binding id}">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OpenMarcacao_Tapped"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                        <StackLayout BackgroundColor="White" WidthRequest="90" HeightRequest="50" Margin="2.5">
+                            <Label FontAttributes="Bold" FontSize="Large" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding hour}" ></Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label TextColor="White" Margin="0,5,0,0" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding DisplayName}"></Label>
+                            <Label TextColor="White" Margin="5,5,0,0" FontSize="14" VerticalOptions="Start" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding jobs}"></Label>        
+                        </StackLayout>
+                    </StackLayout>
+               </StackLayout>     
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+        
+    </ContentPage>
+</TabbedPage>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GentlemansV2.Loading"
+            BackgroundColor="{StaticResource AppDark}">
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator Color="#ffcf40" IsRunning="True" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <ActivityIndicator.Scale>
+                    <OnPlatform x:TypeArguments="x:Double"
+                      iOS="1.5"
+                      Android="1"/>
+                </ActivityIndicator.Scale>
+            </ActivityIndicator>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

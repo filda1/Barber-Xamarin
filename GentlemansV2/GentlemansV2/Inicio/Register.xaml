@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="GentlemansV2.Register"
+             BackgroundColor="{StaticResource AppDark}"
+             Title="Registar">
+
+    <ScrollView>
+        <StackLayout>
+            <Grid Margin="0,40,0,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ChoosePick"></TapGestureRecognizer>
+                </Grid.GestureRecognizers>
+                
+                <ffimageloading:CachedImage
+			                                    WidthRequest="180" HeightRequest="180"
+			                                    DownsampleToViewSize="False"
+			                                    Source = "user.png"
+                                                x:Name="profileImage" Grid.Row="0">
+                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="ChoosePick"></TapGestureRecognizer>
+                                                </ffimageloading:CachedImage.GestureRecognizers>
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>
+                <ffimageloading:CachedImage 
+			                                    WidthRequest="180" HeightRequest="180"
+			                                    DownsampleToViewSize="False"
+			                                    Source = "change_image_overlay.png" 
+                                                x:Name="changeImage" Grid.Row="0">
+                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="ChoosePick"></TapGestureRecognizer>
+                                                </ffimageloading:CachedImage.GestureRecognizers>
+                                                <ffimageloading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>
+            </Grid>
+
+            <StackLayout Margin="40,0,40,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry HeightRequest="40" x:Name="firstNameEntry" Placeholder="Nome" HorizontalOptions="FillAndExpand" TextColor="White">
+                        <Entry.TextColor>
+                            <OnPlatform x:TypeArguments="Color"
+                              Android="#fff"/>
+                        </Entry.TextColor>
+                        <Entry.PlaceholderColor>
+                            <OnPlatform x:TypeArguments="Color"
+                              Android="Gray"/>
+                        </Entry.PlaceholderColor>
+                    </Entry>
+                    <Entry HeightRequest="40" x:Name="lastNameEntry" Placeholder="Apelido" HorizontalOptions="FillAndExpand" TextColor="White">
+                        <Entry.TextColor>
+                            <OnPlatform x:TypeArguments="Color"
+                              Android="#fff"/>
+                        </Entry.TextColor>
+                        <Entry.PlaceholderColor>
+                            <OnPlatform x:TypeArguments="Color"
+                              Android="Gray"/>
+                        </Entry.PlaceholderColor>
+                    </Entry>
+                </StackLayout>
+                <Entry HeightRequest="40" x:Name="emailEntry" Placeholder="Email" HorizontalOptions="FillAndExpand" Keyboard="Email">
+                    <Entry.TextColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="#fff"/>
+                    </Entry.TextColor>
+                    <Entry.PlaceholderColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="Gray"/>
+                    </Entry.PlaceholderColor>
+                </Entry>
+                <Label TextColor="White" Text="Número" HorizontalOptions="FillAndExpand">
+                    <Label.TextColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="#fff"
+                          iOS="Gray"/>
+                    </Label.TextColor>
+                </Label>
+                <Entry Focused="Numero_Focused" Unfocused="Numero_Unfocused" HeightRequest="40" x:Name="numeroEntry" Placeholder="Numero" HorizontalOptions="FillAndExpand" Keyboard="Numeric">
+                    <Entry.TextColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="#fff"/>
+                    </Entry.TextColor>
+                    <Entry.PlaceholderColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="Gray"/>
+                    </Entry.PlaceholderColor>
+                </Entry>
+                <Label TextColor="White" Text="Data de Nascimento" HorizontalOptions="FillAndExpand">
+                    <Label.TextColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="#fff"
+                          iOS="Gray"/>
+                    </Label.TextColor>
+                </Label>
+                <DatePicker IsVisible="False" DateSelected="Handle_DateSelected" TextColor="Gray" HeightRequest="40" x:Name="dateEntry" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="OpenDataPicker" Clicked="OpenDataPicker_Clicked" WidthRequest="50" HeightRequest="40" BackgroundColor="White" BorderColor="White" BorderWidth="4" FontSize="Default" TextColor="Gray" Text="Selecionar data"></Button>
+
+                <Entry HeightRequest="40" x:Name="passwordEntry" Placeholder="Password" HorizontalOptions="FillAndExpand" IsPassword="True">
+                    <Entry.TextColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="#fff"/>
+                    </Entry.TextColor>
+                    <Entry.PlaceholderColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="Gray"/>
+                    </Entry.PlaceholderColor>
+                </Entry>
+                <Entry HeightRequest="40" x:Name="confirmPasswordEntry" Placeholder="Confirmar Password" HorizontalOptions="FillAndExpand" IsPassword="True">
+                    <Entry.TextColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="#fff"/>
+                    </Entry.TextColor>
+                    <Entry.PlaceholderColor>
+                        <OnPlatform x:TypeArguments="Color"
+                          Android="Gray"/>
+                    </Entry.PlaceholderColor>
+                </Entry>
+                
+                <Button Clicked="Button_Clicked" Margin="50,50" BackgroundColor="Transparent" BorderColor="White" BorderWidth="4" FontSize="Medium" TextColor="White" Text="Registar"></Button>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

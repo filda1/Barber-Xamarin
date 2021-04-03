@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GentlemansV2.AppGaleria"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
+             BackgroundColor="{StaticResource AppDark}"
+             Title="Hair Styling">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppDark}">
+            
+            <Label Margin="10,0,0,0" TextColor="Gray" FontSize="Large">Hair Design</Label>
+            <flv:FlowListView BackgroundColor="{StaticResource AppDark}" FlowRowBackgroundColor="{StaticResource AppDark}" FlowColumnMinWidth="110" SeparatorVisibility="None" HasUnevenRows="true" x:Name="galeriaStackHair">
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        
+                        <Grid Padding="3" ClassId="{Binding ImageUrl}">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+                            
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <ActivityIndicator Grid.Row="0" Grid.Column="0" IsRunning="true" Color="#ffcf40"></ActivityIndicator>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0"
+                                                        HeightRequest="100" Aspect="AspectFill"
+                                                        DownsampleToViewSize="true"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding ImageUrl}"
+                                                        >
+                            </ffimageloading:CachedImage>
+                           
+                        </Grid>
+                        
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+                
+            <Label Margin="10,0,0,0" TextColor="Gray" FontSize="Large">Old School</Label>
+            <flv:FlowListView BackgroundColor="{StaticResource AppDark}" FlowRowBackgroundColor="{StaticResource AppDark}" FlowColumnMinWidth="110" SeparatorVisibility="None" HasUnevenRows="true" x:Name="galeriaStackOld">
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        
+                        <Grid Padding="3" ClassId="{Binding ImageUrl}">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+                            
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <ActivityIndicator Grid.Row="0" Grid.Column="0" IsRunning="true" Color="#ffcf40"></ActivityIndicator>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0"
+                                                        HeightRequest="100" Aspect="AspectFill"
+                                                        DownsampleToViewSize="true"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding ImageUrl}"
+                                                        >
+                            </ffimageloading:CachedImage>
+                           
+                        </Grid>
+                        
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+            
+            <Label Margin="10,0,0,0" TextColor="Gray" FontSize="Large">New School</Label>
+            <flv:FlowListView BackgroundColor="{StaticResource AppDark}" FlowRowBackgroundColor="{StaticResource AppDark}" FlowColumnMinWidth="110" SeparatorVisibility="None" HasUnevenRows="true" x:Name="galeriaStackNew">
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        
+                        <Grid Padding="3" ClassId="{Binding ImageUrl}">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+                            
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <ActivityIndicator Grid.Row="0" Grid.Column="0" IsRunning="true" Color="#ffcf40"></ActivityIndicator>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0"
+                                                        HeightRequest="100" Aspect="AspectFill"
+                                                        DownsampleToViewSize="true"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding ImageUrl}"
+                                                        >
+                            </ffimageloading:CachedImage>
+                           
+                        </Grid>
+                        
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+            
+            <Label Margin="10,0,0,0" TextColor="Gray" FontSize="Large">Kids</Label>
+            <flv:FlowListView BackgroundColor="{StaticResource AppDark}" FlowRowBackgroundColor="{StaticResource AppDark}" FlowColumnMinWidth="110" SeparatorVisibility="None" HasUnevenRows="true" x:Name="galeriaStackKids">
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        
+                        <Grid Padding="3" ClassId="{Binding ImageUrl}">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+                            
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <ActivityIndicator Grid.Row="0" Grid.Column="0" IsRunning="true" Color="#ffcf40"></ActivityIndicator>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0"
+                                                        HeightRequest="100" Aspect="AspectFill"
+                                                        DownsampleToViewSize="true"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding ImageUrl}"
+                                                        >
+                            </ffimageloading:CachedImage>
+                           
+                        </Grid>
+                        
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

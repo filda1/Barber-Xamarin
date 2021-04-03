@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="GentlemansV2.ImageFinish"
+             BackgroundColor="{StaticResource AppDark}"
+             Title="Foto">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <ActivityIndicator Grid.Row="0" Grid.Column="0" IsRunning="true" Color="#ffcf40" VerticalOptions="CenterAndExpand" x:Name="loading"></ActivityIndicator>
+                <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="ImageToPreview"></Image>
+             </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

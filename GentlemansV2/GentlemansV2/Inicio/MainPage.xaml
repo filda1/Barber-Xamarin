@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GentlemansV2.MainPage"
+             BackgroundColor="{StaticResource AppDark}"
+             Title="Inicio">
+
+    <StackLayout>
+        <Image Margin="0,80,0,30" HorizontalOptions="CenterAndExpand" Source="logoBorderWhite.png" WidthRequest="200"></Image>
+        <StackLayout Margin="100,50">
+            <Button Margin="0,0,0,10" BackgroundColor="Transparent" BorderColor="White" BorderWidth="4" FontSize="Medium" TextColor="White" HeightRequest="55" HorizontalOptions="FillAndExpand" Text="Entrar" Clicked="Open_Entrar"></Button>
+            <Button Margin="0,0,0,10" BackgroundColor="Transparent" BorderColor="White" BorderWidth="4" FontSize="Medium" TextColor="White" HeightRequest="55" HorizontalOptions="FillAndExpand" Text="Registar" Clicked="Open_RegisterOptions"></Button>
+            <Button BackgroundColor="Transparent" BorderColor="White" BorderWidth="4" FontSize="Medium" TextColor="White" HeightRequest="55" HorizontalOptions="FillAndExpand" Text="Convidado" Clicked="Convidado_Clicked"></Button>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="GentlemansV2.FechoMarcacao"
+             BackgroundColor="{StaticResource AppDark}"
+             Title="Marcação">
+    <ContentPage.Content>
+        <StackLayout Margin="20,20">
+            <Label TextColor="Gray">Cliente</Label>
+            <Entry TextColor="Black" BackgroundColor="White" Text="" x:Name="cliente_Name" IsEnabled="false"/>
+            <Label TextColor="Gray">Hora de Inicio</Label>
+            <Entry TextColor="Black" BackgroundColor="White" Text="" x:Name="hora_inicio" IsEnabled="false"/>
+            <Label TextColor="Gray">Hora de Fim</Label>
+            <Entry TextColor="Black" BackgroundColor="White" Text="" x:Name="hora_fim" IsEnabled="false"/>
+            <Label TextColor="Gray">Trabalhos</Label>
+            <StackLayout BackgroundColor="White" Padding="3">
+                   <Label x:Name="trabalhos" TextColor="Black"></Label>
+            </StackLayout>
+            
+            <Label TextColor="Gray" Text="Data Finalização" x:Name="data_finalizacaoText" IsVisible="false"></Label>
+            <Entry TextColor="Black" BackgroundColor="White" Text="" x:Name="data_finalizacao" IsEnabled="false" IsVisible="false"/>
+            
+            
+            <Entry Placeholder="Valor" x:Name="valor" Keyboard="Numeric" HorizontalOptions="FillAndExpand" HeightRequest="40" VerticalOptions="EndAndExpand"/>
+            <Button Clicked="Finalizar_Clicked" HorizontalOptions="FillAndExpand" Text="Fechar Trabalho"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

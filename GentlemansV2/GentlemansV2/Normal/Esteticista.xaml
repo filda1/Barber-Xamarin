@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GentlemansV2.Normal.Esteticista"
+             BackgroundColor="{StaticResource AppDark}"
+             Title="Menu Esteticista">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Conta" Clicked="Definitions_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                <StackLayout  HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Frame WidthRequest="80" HeightRequest="80" CornerRadius="25" BackgroundColor="White">
+                        <Image WidthRequest="80" HeightRequest="80" VerticalOptions="Center" HorizontalOptions="Center" Source="marcacoes.png"></Image>
+                    </Frame>
+                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" FontSize="Medium">Marcações</Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1" >
+                <StackLayout  HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Frame WidthRequest="80" HeightRequest="80" CornerRadius="25" BackgroundColor="White">
+                        <Image WidthRequest="80" HeightRequest="80" VerticalOptions="Center" HorizontalOptions="Center" Source="contacts.png"></Image>
+                    </Frame>
+                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" FontSize="Medium">Contactos</Label>
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout Grid.Row="1" Grid.Column="0" >
+                <StackLayout  HorizontalOptions="Center" VerticalOptions="Start">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Frame WidthRequest="80" HeightRequest="80" CornerRadius="25" BackgroundColor="White">
+                        <Image WidthRequest="80" HeightRequest="80" VerticalOptions="Center" HorizontalOptions="Center" Source="local.png"></Image>
+                    </Frame>
+                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" FontSize="Medium">Localização</Label>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="EndAndExpand" Orientation="Horizontal" Margin="20,0,0,30" x:Name="detailsBox" IsVisible="false">
+                <StackLayout WidthRequest="2" HeightRequest="40" BackgroundColor="#ffcf40">
+                </StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label FontSize="Medium" TextColor="Gray">Próxima Marcação</Label>
+                    <Label FontSize="Small" TextColor="Gray" x:Name="BarberName"></Label>
+                    <Label FontSize="Small" TextColor="Gray" x:Name="details"></Label>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

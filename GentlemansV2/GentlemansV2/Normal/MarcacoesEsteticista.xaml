@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             x:Class="GentlemansV2.MarcacoesEsteticista"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             BarBackgroundColor="Black"
+             BarTextColor="White"
+             Title="Marcações Esteticista">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Calendário" BackgroundColor="{StaticResource AppDark}" Icon="small_calendar.png">
+        <ScrollView>
+            <StackLayout>
+                <controls:Calendar Margin="0,20,0,0" Padding="10,0,10,0" BackgroundColor="{StaticResource AppDark}" x:Name="calendarView"
+                               StartDay="Monday" 
+                               SelectedBorderWidth="0" 
+                               DisabledBorderColor="Black"
+                               TitleLeftArrowTextColor="#ffcf40"
+                               TitleLeftArrowIsVisible="true"
+                               TitleRightArrowTextColor="#ffcf40"
+                               WeekdaysFormat="ddd"
+                               WeekdaysFontSize="11"
+                               TitleLabelTextColor="White"
+                               SelectedBackgroundColor="#ffcf40"
+                               SelectedTextColor="White"
+                               DateClicked="DataSelecionada">
+                </controls:Calendar>
+
+                <Grid Padding="0,0,0,4" ClassId="{Binding idJob}" Margin="2">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer></TapGestureRecognizer>
+                    </Grid.GestureRecognizers>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Margin="10" TextColor="Gray" Opacity="0" Grid.Row="0" Grid.Column="0" x:Name="infoNon">Não existem marcações na data selecionada</Label>
+                    <ActivityIndicator Color="#ffcf40" IsRunning="True" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Opacity="0" x:Name="loadingIndi2">
+                        <ActivityIndicator.Scale>
+                            <OnPlatform x:TypeArguments="x:Double"
+                          iOS="1.5"
+                          Android="1"/>
+                        </ActivityIndicator.Scale>
+                    </ActivityIndicator>
+                    <StackLayout Opacity="0" x:Name="stackListDay" Grid.Row="0" Grid.Column="0">
+                        <flv:FlowListView BackgroundColor="{StaticResource AppDark}" SeparatorVisibility="None" FlowColumnMinWidth="250" HasUnevenRows="true" x:Name="getStack">
+
+                            <flv:FlowListView.FlowColumnTemplate>
+                                <DataTemplate>
+
+                                    <Grid Padding="0,0,0,4" ClassId="{Binding idJob}" BackgroundColor="Black" Margin="2">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="Marcacao_Tapped"></TapGestureRecognizer>
+                                        </Grid.GestureRecognizers>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout BackgroundColor="{StaticResource AppDark}">
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout BackgroundColor="White" WidthRequest="90" HeightRequest="50" Margin="2.5">
+                                                    <Label FontAttributes="Bold" FontSize="Large" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding dayMonth}"></Label>
+                                                </StackLayout>
+                                                <StackLayout HorizontalOptions="FillAndExpand">
+                                                    <Label TextColor="White" Margin="0,5,0,0" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding cadeira}"></Label>
+                                                    <Label TextColor="White" Margin="0,5,5,0" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="End" Text="{Binding date}"></Label>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+
+                                </DataTemplate>
+                            </flv:FlowListView.FlowColumnTemplate>
+
+                        </flv:FlowListView>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+    <ContentPage Title="Histórico" BackgroundColor="{StaticResource AppDark}" Icon="small_list.png">
+        <ScrollView>
+            <StackLayout>
+                <Label x:Name="infoNA" FontSize="Medium" TextColor="Gray" Margin="5">Ainda não tem nenhuma marcação no seu histórico</Label>
+                <flv:FlowListView BackgroundColor="{StaticResource AppDark}" SeparatorVisibility="None" FlowColumnMinWidth="250" HasUnevenRows="true" x:Name="historicoStack">
+
+                    <flv:FlowListView.FlowColumnTemplate>
+                        <DataTemplate>
+
+                            <Grid Padding="0,0,0,4" ClassId="{Binding idJob}" BackgroundColor="Black" Margin="2">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Photo_Click"></TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout BackgroundColor="{StaticResource AppDark}">
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout BackgroundColor="White" WidthRequest="90" HeightRequest="50" Margin="2.5">
+                                            <Label FontAttributes="Bold" FontSize="Large" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding dayMonth}"></Label>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="FillAndExpand">
+                                            <Label TextColor="White" Margin="0,5,0,0" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding cadeira}"></Label>
+                                            <Label TextColor="White" Margin="0,5,5,0" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="End" Text="{Binding date}"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+
+                        </DataTemplate>
+                    </flv:FlowListView.FlowColumnTemplate>
+
+                </flv:FlowListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+</TabbedPage>

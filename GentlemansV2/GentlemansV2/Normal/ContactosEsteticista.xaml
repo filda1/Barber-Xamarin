@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GentlemansV2.Normal.ContactosEsteticista"
+             xmlns:iconize1="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             BackgroundColor="{StaticResource AppDark}"
+             Title="Contactos Esteticista">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
+                <Image WidthRequest="100" Source="logo_esteticista.png"></Image>
+                <Label FontSize="Large" VerticalOptions="CenterAndExpand" TextColor="White">Joana Moreira Ateliê</Label>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Black" Padding="5,0,5,0">
+                <StackLayout Orientation="Horizontal" Margin="0,30,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Email_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <iconize1:IconImage HeightRequest="20" Icon="fa-envelope-o" IconColor="White" WidthRequest="20" />
+                    <Label FontSize="Small" VerticalOptions="CenterAndExpand" TextColor="White">joo_moreira@hotmail.com</Label>
+                </StackLayout>
+
+                <StackLayout HeightRequest="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="30,0,10,0"></StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,30,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Contacto_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <iconize1:IconImage HeightRequest="20" Icon="fa-phone" IconColor="White" WidthRequest="20" />
+                    <Label FontSize="Small" VerticalOptions="CenterAndExpand" TextColor="White">(+351) 913 367 986</Label>
+                </StackLayout>
+
+                <StackLayout HeightRequest="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="30,0,10,0"></StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,30,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Facebook_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <iconize1:IconImage HeightRequest="20" Icon="fa-facebook" IconColor="White" WidthRequest="20" />
+                    <Label FontSize="Small" VerticalOptions="CenterAndExpand" TextColor="White">Joana Moreira Ateliê</Label>
+                </StackLayout>
+
+                <StackLayout HeightRequest="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="30,0,10,0"></StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,30,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Instagram_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <iconize1:IconImage HeightRequest="20" Icon="fa-instagram" IconColor="White" WidthRequest="20" />
+                    <Label FontSize="Small" VerticalOptions="CenterAndExpand" TextColor="White">joanamoreira_atelie</Label>
+                </StackLayout>
+
+                <StackLayout HeightRequest="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="30,0,10,30"></StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
